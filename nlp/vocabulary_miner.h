@@ -17,9 +17,9 @@ struct tf
 // root represents the entire linked list;
 
 char* tokenize(char* content, int len) {
-    size_t malloc_size = (size_t) (2*(len-1)+1);
+    size_t malloc_size = (size_t) (2*(len-1));
     char* token_candidate = (char*) malloc(malloc_size);
-    for (int i = 0; i < (len-2); i++)
+    for (int i = 0; i < (len-1); i++)
     {
         *(token_candidate+2*i) = content[i];
         *(token_candidate+2*i+1) = content[i+1];
@@ -36,23 +36,27 @@ struct tf* search(struct tf* node, char* term)
         return node;
     else
         return search(node->next, term);
+
 }
 
 void append(struct tf* node, char* term)
 {
-    struct tf* tail = (struct tf*) malloc(sizeof(struct tf));
-    (tail->term) = term;
-    (tail->frequency) = 1;
-    (tail->next) = 0;
     if ((node->next) == 0)
+    {
+        struct tf* tail = (struct tf*) malloc(sizeof(struct tf));
+        (tail->term) = term;
+        (tail->frequency) = 1;
+        (tail->next) = 0;
         (node->next) = tail;
+    }
+
     else
         return append(node->next, term);
 }
 
 void update(struct tf* node)
 {
-    (node->term) += 1;
+    (node->frequency) += 1;
 }
 
 void update_list(struct tf* root, char* term)
@@ -77,22 +81,27 @@ void free_list(struct tf* node)
     }
 }
 
-void construct_tf(struct tf* root, char* token_candidate, int index, int len)
+struct tf* construct_tf(struct tf* root, char* token_candidate, int index, int len)
 {
-    char token[3] = {*(token_candidate + 2*index), *(token_candidate + 2*index + 1)};
-    char* p_token = &token[0];
-    if (index == len)
-        return;
+    if (index == len - 1)
+        return root;
     else
     {
+        char* token = (char*) malloc(2*sizeof(char) + 1);
+        for(int i=0;i<2;i++)
+        {
+            *(token + i) = *(token_candidate + 2*index + i);
+        }
+        *(token + 2) = '\0';
         if (index == 0) {
             root = (struct tf *) malloc(sizeof(struct tf));
-            root->term = p_token;
+            root->term = token;
             root->frequency = 1;
             root->next = 0;
         }
-        else if (index < len) {
-            update_list(root, p_token);
+        else
+        {
+            update_list(root, token);
         }
 
         index += 1;
@@ -104,9 +113,8 @@ struct tf* get_tf(char* s, int len)
 {
     char* tokens = tokenize(s, len);
     struct tf* root = 0;
-    construct_tf(root, tokens, 0, len);
+    root = construct_tf(root, tokens, 0, len);
     free(tokens);
-    free_list(root);
     return root;
 }
 

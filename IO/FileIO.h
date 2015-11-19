@@ -7,8 +7,10 @@ char* _fread(FILE *fp)
 {
     fseek(fp, 0, SEEK_END);
     long file_size = ftell(fp);
-    char* str = (char*) malloc(file_size*sizeof(char));
-    strcpy(str, fp->_IO_read_base);
+    fseek(fp, 0, SEEK_SET);
+    char* str = (char*) malloc(file_size*sizeof(char) + 1);
+    fread(str, sizeof(char), file_size, fp);
+    *(str + file_size) = '\0';
     fclose(fp);
     return str;
 }
