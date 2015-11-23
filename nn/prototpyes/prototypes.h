@@ -1,16 +1,16 @@
 struct node {
-    int sn;
+    int id;
     long weight[];
     long out_signal;
     long error;
 };
 
 struct layer {
-    struct nood* nodes[];
+    struct node* nodes[];
     int layer;
 };
 
-struct nn {
+struct network {
     struct layer* layers[];
     int depth;
     int width;
