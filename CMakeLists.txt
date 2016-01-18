@@ -12,6 +12,10 @@ set(SOURCE_FILES
         util/mil/insertion_sort.c
         util/mil/quick_sort.h
         util/mil/true_random.h
-        main.cpp data_structure/graph.h)
+        main.cpp
+        data_structure/stack.h
+        util/mil/timer_example.h
+        data_structure/stack_cpp.h
+)
 
 add_executable(roy_c ${SOURCE_FILES})
