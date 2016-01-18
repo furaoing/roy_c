@@ -12,11 +12,15 @@ set(SOURCE_FILES
         util/mil/insertion_sort.c
         util/mil/quick_sort.h
         util/mil/true_random.h
+        util/mil/roy_system.h
         main.cpp
         data_structure/stack.h
         data_structure/graph.h
         util/mil/timer_example.h
         data_structure/stack_cpp.h
+
 )
 
+find_package(Boost REQUIRED)
 add_executable(roy_c ${SOURCE_FILES})
+target_link_libraries(roy_c ${Boost_LIBRARIES})
