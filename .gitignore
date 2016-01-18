@@ -52,3 +52,6 @@ out/
 *.out
 *.obj
 *.a
+
+# Other files
+main.cpp
