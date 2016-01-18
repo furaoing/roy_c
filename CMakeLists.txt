@@ -14,6 +14,7 @@ set(SOURCE_FILES
         util/mil/true_random.h
         main.cpp
         data_structure/stack.h
+        data_structure/graph.h
         util/mil/timer_example.h
         data_structure/stack_cpp.h
 )
