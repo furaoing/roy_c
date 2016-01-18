@@ -70,7 +70,7 @@ int collision_detection()
    return 0;
 }
 
-int main()
+int _main()
 {
     generate_bigDataSet();
     //collision_detection();

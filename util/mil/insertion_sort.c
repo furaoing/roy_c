@@ -30,7 +30,7 @@ int insertion_sort(int *nums, int size)
     return 1;
 }
 
-int main()
+int _main()
 {
     int my_array[] = {5,3,2,4,1,77,8,33,31,3,4};
     int size = sizeof(my_array)/sizeof(my_array[0]);
