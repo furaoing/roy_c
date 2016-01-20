@@ -59,6 +59,12 @@ namespace roy_c {
         return str_join(strs, "/");
     }
 
+    std::string get_abs_pth(std::string rel_pth){
+        std::string entry_pth = get_entry_pth();
+        std::string abs_pth = entry_pth + "/" + rel_pth;
+        return abs_pth;
+    }
+
 }
 
 
