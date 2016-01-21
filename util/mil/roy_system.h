@@ -17,6 +17,16 @@ namespace roy_c {
     /*
      * Mirrored Python String Join Method.
      */
+
+    int roy_memset(int reserve_len, int all_len, char * p)
+    {
+        for(int i=reserve_len;i<all_len;i++)
+        {
+            *(p+i) = 0;
+        }
+        return 0;
+    }
+
     std::string str_join(std::vector<std::string> strs, std::string separator) {
         std::string joined_str = "";
         for(int i=0;i<strs.size();++i){
