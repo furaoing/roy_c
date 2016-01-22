@@ -7,7 +7,7 @@
 int main()
 {
     using namespace std;
-    using roy_c::f_write;
+
     std::string pth = "test_data/test1";
     int stat = 0;
 
@@ -21,6 +21,4 @@ int main()
     */
 
     std::cout << a << std::endl;
-
-
 }

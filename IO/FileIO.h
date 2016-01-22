@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 
+
 namespace roy_c {
     /*
      *  Pure C File Read Utility, Legacy
@@ -139,4 +140,14 @@ namespace roy_c {
 
         }
       }
+
+    /*  rapidjson , reader template
+    rapidjson::Document json_read(std::string file_path){
+        using namespace rapidjson;
+        const char* json = roy_c::f_read(file_path).c_str();
+        Document d;
+        d.Parse(json);
+        return d;
+    }
+     */
 }

@@ -22,5 +22,9 @@ set(SOURCE_FILES
 )
 
 find_package(Boost REQUIRED)
+
+
+include_directories( ${PROJECT_SOURCE_DIR})
+
 add_executable(roy_c ${SOURCE_FILES})
 target_link_libraries(roy_c ${Boost_LIBRARIES})
