@@ -11,6 +11,7 @@ typedef struct {
     int top;
     int maxSize;
 } stackT;
+/* A struct functions as a stack for char elements */
 
 void StackInit(stackT *stackP, int maxSize)
 {
