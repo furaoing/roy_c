@@ -2,11 +2,23 @@
 
 #include "util/mil/roy_system.h"
 #include <boost/algorithm/string.hpp>
+#include "IO/FileIO.h"
+
 int main()
 {
-    std::string rel_pth = "data/abx.out";
-    std::cout << "Abs Path:" + roy_c::get_abs_pth(rel_pth) << std::endl;
+    using namespace std;
 
+    std::string pth = "test_data/test1";
+    int stat = 0;
 
+    const int my_con(23);
+    string a = roy_c::f_read(pth);
+    /*
+    std::ofstream myfile(pth, std::ios::app);
+            if (myfile.is_open()) {
+                myfile << "mike";
+            }
+    */
 
+    std::cout << a << std::endl;
 }
