@@ -74,6 +74,22 @@ namespace roy_c {
         std::string abs_pth = entry_pth + "/" + rel_pth;
         return abs_pth;
     }
+    
+    class Timer {
+        clock_t start_time = 0;
+        clock_t end_time = 0;
+
+        void start(){
+            start_time = clock();
+        }
+
+        void end(){
+            end_time = clock();
+        }
+
+        float t_elapsed(){
+            return 1000*(((float)(end_time - start_time))/CLOCKS_PER_SEC);
+        }
 
 }
 
