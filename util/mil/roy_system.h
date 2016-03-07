@@ -79,17 +79,18 @@ namespace roy_c {
         clock_t start_time = 0;
         clock_t end_time = 0;
 
-        void start(){
+        void start() {
             start_time = clock();
         }
 
-        void end(){
+        void end() {
             end_time = clock();
         }
 
-        float t_elapsed(){
-            return 1000*(((float)(end_time - start_time))/CLOCKS_PER_SEC);
+        float t_elapsed() {
+            return 1000 * (((float) (end_time - start_time)) / CLOCKS_PER_SEC);
         }
+    };
 
 }
 
