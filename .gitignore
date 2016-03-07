@@ -54,6 +54,5 @@ out/
 *.a
 
 # Other files
-test_data/
 main.cpp
 

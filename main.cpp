@@ -2,23 +2,14 @@
 
 #include "util/mil/roy_system.h"
 #include <boost/algorithm/string.hpp>
-#include "IO/FileIO.h"
-
+#include "data_structure/stack.h"
+#include <string>
+using namespace std;
 int main()
 {
-    using namespace std;
+    stackT my_stack;
+    /* declare a stack (struct), reserve memory space for it */
+    char t = 'a';
+    my_stack.contents = &t;
 
-    std::string pth = "test_data/test1";
-    int stat = 0;
-
-    const int my_con(23);
-    string a = roy_c::f_read(pth);
-    /*
-    std::ofstream myfile(pth, std::ios::app);
-            if (myfile.is_open()) {
-                myfile << "mike";
-            }
-    */
-
-    std::cout << a << std::endl;
 }
