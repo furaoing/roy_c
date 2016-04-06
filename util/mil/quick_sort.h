@@ -6,8 +6,6 @@
 #ifndef ALGORITHM_QUICK_SORT_H
 #define ALGORITHM_QUICK_SORT_H
 
-#endif //ALGORITHM_QUICK_SORT_H
-
 int find_bigger(int index, int pivot, int* p_x, int arr_len)
 {
     int tmp=-1;
@@ -109,3 +107,5 @@ int q_sort(int* my_arr, int len)
 
     return 0;
 }
+
+#endif //ALGORITHM_QUICK_SORT_H

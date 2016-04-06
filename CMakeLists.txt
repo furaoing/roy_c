@@ -19,7 +19,7 @@ set(SOURCE_FILES
         util/mil/timer_example.h
         data_structure/stack_cpp.h
 
-)
+        util/mil/isPrime.h)
 
 find_package(Boost REQUIRED)
 
