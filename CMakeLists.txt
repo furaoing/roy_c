@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.3)
-project(roy_c)
+project(zeus)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
@@ -26,5 +26,5 @@ find_package(Boost REQUIRED)
 
 include_directories( ${PROJECT_SOURCE_DIR})
 
-add_executable(roy_c ${SOURCE_FILES})
-target_link_libraries(roy_c ${Boost_LIBRARIES})
+add_executable(zeus ${SOURCE_FILES})
+target_link_libraries(zeus ${Boost_LIBRARIES})
